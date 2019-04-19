@@ -2,9 +2,12 @@
   "name": "mern-time-management",
   "version": "1.0.0",
   "description": "An app created to help people manage task and find time",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -12,10 +15,6 @@
   },
   "author": "Jesus Salazar, Tyler Zaworski",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jslzr27/MERN-Time-Management/issues"
-  },
-  "homepage": "https://github.com/jslzr27/MERN-Time-Management#readme",
   "dependencies": {
     "@material-ui/core": "^3.9.3",
     "axios": "^0.18.0",
@@ -23,5 +22,8 @@
     "express": "^4.16.4",
     "mongoose": "^5.5.2",
     "passport": "^0.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.11"
   }
 }
