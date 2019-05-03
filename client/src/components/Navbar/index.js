@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from 'prop-types';
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -7,8 +6,7 @@ import Button from '@material-ui/core/Button';
 
 import "./style.css";
 
-const Navbar = (props) => {
-    const { classes } = props;
+const Navbar = () => {
     return(
         <div className="classes.root">
             <AppBar position="static">
@@ -22,9 +20,5 @@ const Navbar = (props) => {
         </div>
     )
 }
-
-Navbar.propTypes = {
-    classes: PropTypes.object.isRequired,
-  };
 
 export default Navbar;
