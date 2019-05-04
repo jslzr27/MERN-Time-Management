@@ -8,7 +8,7 @@ import "./style.css";
 
 const Navbar = () => {
     return(
-        <div className="classes.root">
+        <div>
             <AppBar position="static">
                 <Toolbar>
                     <Typography variant="headline" color="inherit">
