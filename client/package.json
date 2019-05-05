@@ -6,6 +6,7 @@
   "dependencies": {
     "@date-io/moment": "^1.3.5",
     "@material-ui/core": "^3.9.3",
+    "@material-ui/styles": "^3.0.0-alpha.10",
     "@mobiscroll/react": "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-4.6.3.tgz",
     "axios": "^0.18.0",
     "expo": "^32.0.6",

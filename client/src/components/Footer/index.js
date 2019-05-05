@@ -1,28 +1,45 @@
-import React from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from '@material-ui/core/Button';
-import MenuTabs from "../Tabs";
+import React, { Fragment } from 'react'
+import { withStyles, AppBar, Toolbar, Typography, Button } from '@material-ui/core';
+import PropTypes from 'prop-types';
+import MenuTabs from '../Tabs';
 import "./style.css";
 
-const Footer = () => {
-    return (
-        <div>
-            <AppBar id="footer" color="primary">
+
+const styles = {
+    root: {
+      background: '#4b7447',
+      border: 0,
+      boxShadow: 'none',
+      position: "static",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    },
+  };  
+
+
+const Footer = (props) => {
+    const { classes } = props;
+    return(
+        <Fragment>
+            <AppBar className={classes.root}>
             <MenuTabs />
-           <Typography>
+            <Typography id="symbols">
                 Powered by:<br></br>
-                <i class="fab fa-react"></i> 
-                <i class="fab fa-js-square"></i>
-                <i class="fab fa-html5"></i>
-                <i class="fab fa-css3-alt"></i>
-                <i class="fab fa-node"></i>
-            </Typography> 
-            <Typography>© Copyright 2019 Coding Bootcamp | Created by: Jesus Salazar <i class="fab fa-linkedin"></i> <i class="fab fa-github"></i> <span> &</span> Tyler Zaworski</Typography>
+                <i className="fab fa-react"></i> 
+                <i className="fab fa-js-square"></i>
+                <i className="fab fa-html5"></i>
+                <i className="fab fa-css3-alt"></i>
+                <i className="fab fa-node"></i>
+            </Typography> <br></br>
+            <Typography id="copyright">© Copyright 2019 Coding Bootcamp | Created by: <span id="footer-name">Jesus Salazar</span> <a id="link" href="https://www.linkedin.com/in/jesus-salazar-484837173/" target="_blank"><i class="fab fa-linkedin"></i></a> <a id="link" href="https://github.com/jslzr27" target="_blank"> <i class="fab fa-github"></i></a> <span> &</span> <span id="footer-name">Tyler Zaworski</span></Typography>
             </AppBar>
-        </div>
+        </Fragment>
     )
 }
 
-export default Footer;
+Footer.propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
+
+export default withStyles(styles)(Footer);

@@ -16,7 +16,7 @@ export default class Signup extends Component {
         const expression = /\S+@\S+/
         expression.test(String('my-email@test.com').toLowerCase());
         return(
-            <div>
+            <div className="userForm">
                 User Form
                 <FormControl>
                     <TextField
