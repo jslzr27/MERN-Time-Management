@@ -1,6 +1,22 @@
-#footer {
-    position: static;
-    bottom: 0;
-    width: 100%;
-    background-color: brown;
+#symbols {
+    font-size: 4rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+#symbols .fab {
+    color: #eb8e44;
+    padding: 1rem;
+}
+
+#copyright {
+    color: beige;
+}
+
+#footer-name {
+    color: #eb8e44;
+}
+
+#link {
+    color: inherit; 
 }
