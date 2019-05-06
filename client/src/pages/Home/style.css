@@ -1,0 +1,87 @@
+html{
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+}
+
+.parallax{
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: 30vw 0 5vw;
+    position: relative;
+    transform-style: inherit;
+    width: 100vw;
+}
+.parallax h1 {
+    margin-top: -100px;
+}
+.parallax, .parallax:before{
+    background: 50% 50% / cover;
+}
+.parallax::before{
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    background-image: url("https://images.pexels.com/photos/908298/pexels-photo-908298.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform-origin: center center 0;
+    transform: translateZ(-1px) scale(2);
+    z-index: -1;
+    min-height: 100vh;
+}
+
+.parallax * { 
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    text-align: center;
+    margin: 0;
+    padding: 1em 0;
+    align-items: center;
+    justify-content: center;
+}
+
+#p1::before{
+    background-image: url("../../images/organization.jpeg");
+}
+
+#p2::before{
+    background-image: url("../../images/cofee.jpeg");
+}
+
+.section {
+    height: 48rem;
+    width: 100vw;
+}
+
+#s1, #s2{
+    background-color:  beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+}
+
+#s1 i{
+    font-size: 4rem;
+}
+
+#s1 p{
+    align-items: center;
+    justify-content: center;
+}
