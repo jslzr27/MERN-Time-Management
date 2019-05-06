@@ -16,7 +16,7 @@ export default class Signup extends Component {
         const expression = /\S+@\S+/
         expression.test(String('my-email@test.com').toLowerCase());
         return(
-            <div className="userForm">
+            <div id="user-form">
                 User Form
                 <FormControl>
                     <TextField
@@ -60,7 +60,7 @@ export default class Signup extends Component {
                         // onChange={handleChange("password")}
                         // defaultValue={values.password}
                     />
-                    <Button      onClick={this.continue}>
+                    <Button onClick={this.continue} id="button">
                         Finish Signing Up
                     </Button>
                 </FormControl>

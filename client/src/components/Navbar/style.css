@@ -1,0 +1,11 @@
+#bar{
+    width: 100%;   
+}
+
+#login {
+    float: right;
+    position: relative;
+    margin-right: 0px;
+    border: 1px solid red;
+}
+
