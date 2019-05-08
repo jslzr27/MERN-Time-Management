@@ -13,6 +13,7 @@ const styles = {
       color: 'white',
       alignItems: "center",
       justifyContent: "center",
+      zIndex: 99,
     },
   };  
 

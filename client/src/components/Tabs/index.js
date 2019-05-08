@@ -5,6 +5,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import { Paper } from '@material-ui/core';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 const styles = theme => ({
   root: {
@@ -74,6 +75,7 @@ class MenuTabs extends React.Component {
           onChange={this.handleChange}
           classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
         >
+        <Router>
           <Tab
             disableRipple
             classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
@@ -90,8 +92,15 @@ class MenuTabs extends React.Component {
             disableRipple
             classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
             label="Dashboard"
-            href="dashboard"
+          ><Link to={"/dashboard"}></Link></Tab>
+          <Link to="/">
+          <Tab
+            disableRipple
+            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
+            label="take me home"
           />
+            </Link>
+          </Router>
         </Tabs>
       </Paper>
     );
