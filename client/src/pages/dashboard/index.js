@@ -5,19 +5,20 @@ import MyTask from '../../components/Task/MyTask';
 import Stopwatch from '../../components/TimeTracker/Stopwatch';
 import GoalPage from '../../components/Goals';
 import Sidebar from '../../components/Sidebar';
+import { Grid } from '@material-ui/core';
 
 
 export default class Dashboard extends Component {
   render() {
     return (
-      <div>
+      <Grid container>
         <Sidebar />
         {/* <MyTask />
         <AddActivity />
         <Task />
         <Stopwatch />
         <GoalPage /> */}
-      </div>
+      </Grid>
     )
   }
 }

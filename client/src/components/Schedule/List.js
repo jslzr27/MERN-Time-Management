@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
@@ -39,180 +39,267 @@ function ListItemLink(props) {
 //     }
 // }
 
-function ScheduleList(props) {
-  const { classes } = props;
-  return (
-    <div className={classes.root}>
-      <List component="nav">
-        <ListItem>
-            <ListItemIcon>
-            <i className="fas fa-edit"></i> 
-            <i className="far fa-trash-alt"></i>
-            </ListItemIcon>
-            <ListItemText primary="Working" />
-            <TextField
-            id="outlined-number"
-            label="Number"
-            type="number"
-            defaultValue="0"
-            onChange={this.props.getHours}
-            className={classes.textField}
-            InputLabelProps={{
-                shrink: true,
-            }}
-            margin="normal"
-            variant="outlined"
-            />
-        </ListItem>
-        <ListItem>
-            <ListItemIcon>
-            <i className="fas fa-edit"></i> 
-            <i className="far fa-trash-alt"></i>
-            </ListItemIcon>
-            <ListItemText primary="Going To School" />
-            <TextField
-            id="outlined-number"
-            label="Number"
-            type="number"
-            defaultValue="0"
-            className={classes.textField}
-            InputLabelProps={{
-                shrink: true,
-            }}
-            margin="normal"
-            variant="outlined"
-            />
-        </ListItem>
-        <ListItem>
-            <ListItemIcon>
-            <i className="fas fa-edit"></i> 
-            <i className="far fa-trash-alt"></i>
-            </ListItemIcon>
-            <ListItemText primary="Sleeping" />
-            <TextField
-            id="outlined-number"
-            label="Number"
-            type="number"
-            defaultValue="0"
-            className={classes.textField}
-            InputLabelProps={{
-                shrink: true,
-            }}
-            margin="normal"
-            variant="outlined"
-            />
-        </ListItem>
-        <ListItem>
-            <ListItemIcon>
-            <i className="fas fa-edit"></i> 
-            <i className="far fa-trash-alt"></i>
-            </ListItemIcon>
-            <ListItemText primary="Conmuting" />
-            <TextField
-            id="outlined-number"
-            label="Number"
-            type="number"
-            defaultValue="0"
-            className={classes.textField}
-            InputLabelProps={{
-                shrink: true,
-            }}
-            margin="normal"
-            variant="outlined"
-            />
-        </ListItem>
-        <ListItem>
-            <ListItemIcon>
-            <i className="fas fa-edit"></i> 
-            <i className="far fa-trash-alt"></i>
-            </ListItemIcon>
-            <ListItemText primary="Dining" />
-            <TextField
-            id="outlined-number"
-            label="Number"
-            type="number"
-            defaultValue="0"
-            className={classes.textField}
-            InputLabelProps={{
-                shrink: true,
-            }}
-            margin="normal"
-            variant="outlined"
-            />
-        </ListItem>
-        <ListItem>
-            <ListItemIcon>
-            <i className="fas fa-edit"></i> 
-            <i className="far fa-trash-alt"></i>
-            </ListItemIcon>
-            <ListItemText primary="Exercising" />
-            <TextField
-            id="outlined-number"
-            label="Number"
-            type="number"
-            defaultValue="0"
-            className={classes.textField}
-            InputLabelProps={{
-                shrink: true,
-            }}
-            margin="normal"
-            variant="outlined"
-            />
-        </ListItem>
-        <ListItem>
-            <ListItemIcon>
-            <i className="fas fa-edit"></i> 
-            <i className="far fa-trash-alt"></i>
-            </ListItemIcon>
-            <ListItemText primary="Entertainment" />
-            <TextField
-            id="outlined-number"
-            label="Number"
-            type="number"
-            defaultValue="0"
-            className={classes.textField}
-            InputLabelProps={{
-                shrink: true,
-            }}
-            margin="normal"
-            variant="outlined"
-        />
-        </ListItem>
-        <ListItem>
-            <ListItemIcon>
-            <i className="fas fa-edit"></i> 
-            <i className="far fa-trash-alt"></i>
-            </ListItemIcon>
-            <ListItemText primary="Other" />
-            <TextField
-            id="outlined-number"
-            label="Number"
-            type="number"
-            defaultValue="0"
-            className={classes.textField}
-            InputLabelProps={{
-                shrink: true,
-            }}
-            margin="normal"
-            variant="outlined"
-            />
-        </ListItem>
-        <ListItem button>
-            <ListItemText>
-            <i className="fas fa-plus"></i> Add Activity
-            </ListItemText>
-        </ListItem>
-      </List>
-    </div>
-  );
+// function ScheduleList(props) {
+//   const { classes } = props;
+//   return (
+//     <div className={classes.root}>
+//       <List component="nav">
+//         <ListItem>
+//             <ListItemIcon>
+//             <i className="fas fa-edit"></i> 
+//             <i className="far fa-trash-alt"></i>
+//             </ListItemIcon>
+//             <ListItemText primary="Working" />
+//                 <TextField
+//                 id="outlined-number"
+//                 label="Hours"
+//                 name="hours"
+//                 type="number"
+//                 defaultValue="0"
+//                 // onChange={this.props.getHours}
+//                 className={classes.textField}
+//                 InputLabelProps={{
+//                     shrink: true,
+//                 }}
+//                 margin="normal"
+//                 variant="outlined"
+//                 // onChange={this.getHours}
+//                 />
+//         </ListItem>
+//         <ListItem>
+//             <ListItemIcon>
+//             <i className="fas fa-edit"></i> 
+//             <i className="far fa-trash-alt"></i>
+//             </ListItemIcon>
+//             <ListItemText primary="Going To School" />
+//             <TextField
+//             id="outlined-number"
+//             label="Hours"
+//             name="hours"
+//             type="number"
+//             defaultValue="0"
+//             className={classes.textField}
+//             InputLabelProps={{
+//                 shrink: true,
+//             }}
+//             margin="normal"
+//             variant="outlined"
+//             />
+//         </ListItem>
+//         <ListItem>
+//             <ListItemIcon>
+//             <i className="fas fa-edit"></i> 
+//             <i className="far fa-trash-alt"></i>
+//             </ListItemIcon>
+//             <ListItemText primary="Sleeping" />
+//             <TextField
+//             id="outlined-number"
+//             label="Hours"
+//             name="hours"
+//             type="number"
+//             defaultValue="0"
+//             className={classes.textField}
+//             InputLabelProps={{
+//                 shrink: true,
+//             }}
+//             margin="normal"
+//             variant="outlined"
+//             />
+//         </ListItem>
+//         <ListItem>
+//             <ListItemIcon>
+//             <i className="fas fa-edit"></i> 
+//             <i className="far fa-trash-alt"></i>
+//             </ListItemIcon>
+//             <ListItemText primary="Conmuting" />
+//             <TextField
+//             id="outlined-number"
+//             label="Hours"
+//             name="hours"
+//             type="number"
+//             defaultValue="0"
+//             className={classes.textField}
+//             InputLabelProps={{
+//                 shrink: true,
+//             }}
+//             margin="normal"
+//             variant="outlined"
+//             />
+//         </ListItem>
+//         <ListItem>
+//             <ListItemIcon>
+//             <i className="fas fa-edit"></i> 
+//             <i className="far fa-trash-alt"></i>
+//             </ListItemIcon>
+//             <ListItemText primary="Dining" />
+//             <TextField
+//             id="outlined-number"
+//             label="Hours"
+//             name="hours"
+//             type="number"
+//             defaultValue="0"
+//             className={classes.textField}
+//             InputLabelProps={{
+//                 shrink: true,
+//             }}
+//             margin="normal"
+//             variant="outlined"
+//             />
+//         </ListItem>
+//         <ListItem>
+//             <ListItemIcon>
+//             <i className="fas fa-edit"></i> 
+//             <i className="far fa-trash-alt"></i>
+//             </ListItemIcon>
+//             <ListItemText primary="Exercising" />
+//             <TextField
+//             id="outlined-number"
+//             label="Hours"
+//             name="hours"
+//             type="number"
+//             defaultValue="0"
+//             className={classes.textField}
+//             InputLabelProps={{
+//                 shrink: true,
+//             }}
+//             margin="normal"
+//             variant="outlined"
+//             />
+//         </ListItem>
+//         <ListItem>
+//             <ListItemIcon>
+//             <i className="fas fa-edit"></i> 
+//             <i className="far fa-trash-alt"></i>
+//             </ListItemIcon>
+//             <ListItemText primary="Entertainment" />
+//             <TextField
+//             id="outlined-number"
+//             label="Hours"
+//             name="hours"
+//             type="number"
+//             defaultValue="0"
+//             className={classes.textField}
+//             InputLabelProps={{
+//                 shrink: true,
+//             }}
+//             margin="normal"
+//             variant="outlined"
+//         />
+//         </ListItem>
+//         <ListItem>
+//             <ListItemIcon>
+//             <i className="fas fa-edit"></i> 
+//             <i className="far fa-trash-alt"></i>
+//             </ListItemIcon>
+//             <ListItemText primary="Other" />
+//             <TextField
+//             id="outlined-number"
+//             label="Hours"
+//             name="hours"
+//             type="number"
+//             defaultValue="0"
+//             className={classes.textField}
+//             InputLabelProps={{
+//                 shrink: true,
+//             }}
+//             margin="normal"
+//             variant="outlined"
+//             />
+//         </ListItem>
+//         <ListItem button>
+//             <ListItemText>
+//             <i className="fas fa-plus"></i> Add Activity
+//             </ListItemText>
+//         </ListItem>
+//       </List>
+//     </div>
+//   );
+// }
+
+// ScheduleList.propTypes = {
+//   classes: PropTypes.object.isRequired,
+// };
+
+class ScheduleList extends Component {
+    state = {
+        postItems: [
+            {id: 1, primary: "Working"},
+            {id: 2, primary: "Traveling"},
+            {id: 3, primary: "Sleeping"},
+            {id: 4, primary: "School"},
+            {id: 5, primary: "Dining"},
+            {id: 6, primary: "Exercising"},
+            {id: 7, primary: "Entertainment"},
+            {id: 8, primary: "Other"},            
+        ],
+        primary: "",
+        id: "",
+    }
+
+    postID = this.state.postItems.id;
+
+    deleteTask = (index) => {
+        const copyPostItems = Object.assign([], this.state.postItems);
+        copyPostItems.splice(index, 1);
+        this.setState({
+            postItems: copyPostItems
+        })
+    }
+
+    render() {
+        return (
+        <List>
+            {this.state.postItems.map((post, index) => {
+                return (
+                    <ListItemTask 
+                        key={post.id}
+                        id={post.id}
+                        primary={post.primary}
+                        delete={this.deleteTask.bind(this, index)}
+                    />
+                )
+            } )}      
+            <ListItem button>
+                <ListItemIcon>
+                <i className="fas fa-plus"></i>
+                </ListItemIcon>
+                <ListItemText>
+                 Add Activity
+                </ListItemText>
+                
+            </ListItem>  
+        </List>
+        )
+    }
 }
 
-ScheduleList.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
+class ListItemTask extends Component {
+    render() {
+        return (
+            <ListItem id={this.props.id}>
+            <ListItemIcon>
+            <i className="fas fa-edit"></i> 
+            <i className="far fa-trash-alt" onClick={this.props.delete}></i>
+            </ListItemIcon>
+            <ListItemText primary={this.props.primary} />
+                <TextField
+                id="outlined-number"
+                label="Hours"
+                name="hours"
+                type="number"
+                defaultValue="0"
+                // onChange={this.props.getHours}
+                InputLabelProps={{
+                    shrink: true,
+                }}
+                margin="normal"
+                variant="outlined"
+                // onChange={this.getHours}
+                />
+        </ListItem>
+        )
+    }
+}
 
-
-// totalHours();
-// console.log(totalHours);
 export default withStyles(styles)(ScheduleList);

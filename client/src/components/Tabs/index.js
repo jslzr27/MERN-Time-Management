@@ -9,19 +9,25 @@ import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 const styles = theme => ({
   root: {
+    display: "flex",
     flexGrow: 1,
     backgroundColor: "inherit",
     border: 0,
     boxShadow: "none",
+    alignItems: "center",
+    justifyContent: "center",
   },
   tabsRoot: {
     borderBottom: '1px solid #000000',
+    textAlign: 'center',
+
   },
   tabsIndicator: {
     backgroundColor: '#8bea43',
   },
   tabRoot: {
     textTransform: 'initial',
+    textAlign: 'center',
     minWidth: 72,
     fontWeight: theme.typography.fontWeightRegular,
     marginRight: theme.spacing.unit * 4,
@@ -92,14 +98,8 @@ class MenuTabs extends React.Component {
             disableRipple
             classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
             label="Dashboard"
-          ><Link to={"/dashboard"}></Link></Tab>
-          <Link to="/">
-          <Tab
-            disableRipple
-            classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-            label="take me home"
+            href="/dashboard"
           />
-            </Link>
           </Router>
         </Tabs>
       </Paper>

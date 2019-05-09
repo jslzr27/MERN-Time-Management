@@ -15,7 +15,7 @@ export default class Home extends Component {
             <div>
             <h1>Manage your time with us</h1>
           <h3>Find Time to Learn, Play or Enjoy</h3>
-          <Button variant="contained" color="primary" href="/signup ">Register for Free</Button>
+          <Button variant="contained" color="primary" href="/signup" id="button">Register for Free</Button>
           <h4>Already have an account. <span className="login"><a href="/signup">Log in</a></span></h4>
             </div>
         </section>
@@ -24,21 +24,21 @@ export default class Home extends Component {
         <p><i class="far fa-calendar-alt"></i> Schedule your time</p>
         <p><i class="fas fa-edit"></i> Add a new task you want to improve</p>
         <p><i class="fas fa-stopwatch"></i> Track your activities</p>
-        <Button variant="contained" color="primary" href="/signup">Sign Up Now</Button>
+        <Button variant="contained" color="primary" href="/signup" id="button">Sign Up Now</Button>
       </div>
       <div className="section">
         <section className="parallax" id="p2">
           <div>
           <h1>Manage your time with us</h1>
         <h3>Find Time to Learn, Play or Enjoy</h3>
-        <Button variant="contained" color="primary" href="signup">Register for Free</Button>
+        <Button variant="contained" color="primary" href="signup" id="button">Register for Free</Button>
         <h4>Already have an account. <span className="login"><a href="/signup">Log in</a></span></h4>
           </div>
       </section>
       </div>
       <div className="section" id="s2">
         <p>Start managing your time with us</p>
-        <Button variant="contained" color="primary" href="/signup">Sign Up Now</Button>
+        <Button variant="contained" color="primary" href="/signup" id="button">Sign Up Now</Button>
       </div>
     </div>
     ) 
