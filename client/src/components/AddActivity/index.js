@@ -25,7 +25,7 @@ const AddActivity = () => {
           margin="normal"
         />
         <Typography>
-        <React.Fragment className="pickers"><i class="far fa-clock"></i> <TimePickers /> <TimePickers2 /></React.Fragment>
+        <div className="pickers"><i class="far fa-clock"></i> <TimePickers /> <TimePickers2 /></div>
         </Typography>
       </CardContent>
       <CardActions>

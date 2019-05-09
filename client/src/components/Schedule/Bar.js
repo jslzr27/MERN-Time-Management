@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Container = styled.div`
-    width:50rem;
-    height:50rem;
+    width:40rem;
+    height:40rem;
     background-color: #fff;
-    border-radius:10px
+    border-radius:10px;
 `;
 
 const Title = styled.h1`
@@ -15,15 +15,38 @@ const Title = styled.h1`
     color: black ;
 `;
 
+const Circle = styled.div`
+  height: 165px;
+  width: 165px;
+  background-color:#696878;
+  border-radius: 50%;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 1;
+`;
+
+// const TrackCircle = styled.div`
+//   width: 25rem;
+//   height: 25rem;
+//   border: 20px solid;
+//   border-radius: 50%;
+//   border-color: red;
+//   margin: auto;
+//   transition: width 0.3s ease-in-out;
+// `;
+
 const Track = styled.div`
-    width: 50%;
-    height:2em;
-    background-color: red;
-    border-radius:10px;
+    width: 80%;
+    height:1.5em;
+    background-color: black;
+    border-radius: 10px;
     margin: auto;
     transition: width 0.3s ease-in-out;
 `;
 
+//    width: ${props => props.percentage}%;
 const Thumb = styled.div`
     width: ${props => props.percentage}%;
     height: 100%;
@@ -34,7 +57,7 @@ const Thumb = styled.div`
 
 export default class Bar extends Component {
   clamp = (min, value, max) => {
-    return Math.min(Math.max(min, value, max));
+    return Math.min(Math.max(parseInt(value),min),max);
   }
   render() {
     return (
@@ -42,11 +65,14 @@ export default class Bar extends Component {
         <Container>
           <Title>
             Hello
-          </Title>
+          </Title>  
           <Track>
-            {/* <Thumb percentage={this.clamp(0, this.props.percentage, 100)} /> */}
-            <Thumb percentage={this.clamp(0, this.props.percentage, 24)} />
+            <Thumb percentage={this.clamp(0, this.props.percentage, 100)} />
           </Track>
+          {/* <Track>
+            <Thumb percentage={this.clamp(0, this.props.percentage, 100)} />
+            <Thumb />
+          </Track> */}
         </Container>
       </div>
     )

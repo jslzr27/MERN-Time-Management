@@ -7,6 +7,7 @@ import Home from "./pages/Home/index";
 import Dashboard from "./pages/dashboard/index";
 import './App.css';
 import NoMatch from "./pages/NoMatch/index";
+import { Grid } from "@material-ui/core";
 
 
 
@@ -14,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div className="App">
+      <Grid container className="App">
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
@@ -23,7 +24,7 @@ class App extends Component {
           <Route component={NoMatch} />
         </Switch>
         <Footer />
-      </div>
+      </Grid>
       </Router>
     );
   }
