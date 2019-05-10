@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import ScheduleList from "./List";
 import Bar from "./Bar";
-import { Grid } from "@material-ui/core/";
+import { Grid, } from "@material-ui/core/";
+import CircularProgressBar from "./ProgressBar";
 import "./style.css";
 
 export default class Schedule extends Component {
 
   state = {
     totalHours: 0,
-    percentage: 50,
+    percentage: 10,
   }
 
   // getTotalHours = totalHours => {
@@ -20,13 +21,13 @@ export default class Schedule extends Component {
 }
 
   getPercentage = () => {
-    let percentage = this.state.percentage;
-    percentage = 25;
+    let changePercentage = this.state.percentage;
+    changePercentage = 25;
     this.setState(
-      { percentage: percentage },
+      { percentage: changePercentage },
     );
   }
-
+  
   getHours = e => {
     this.setState({totalHours: e.target.value});
     console.log(e.target.value);
@@ -37,10 +38,15 @@ export default class Schedule extends Component {
         <Grid container id="schedule-div">
         
           <Grid item md>        
-            <ScheduleList getHours = {this.getHours} />
+            <ScheduleList 
+            getHours = {this.getHours} />
           </Grid>
           <Grid item md id="questions">
-            <Bar percentage={this.state.percentage} /> 
+            {/* <Bar percentage={this.state.percentage} />  */}
+            <CircularProgressBar 
+            percentage={this.state.percentage}
+            strokeWidth="20"
+            sqSize="400" />
           </Grid>      
         </Grid>
     )

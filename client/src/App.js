@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Navbar from "./components/Navbar/index.js";
 import Footer from "./components/Footer/index.js";
-import SignUp from "./pages/User/signup";
+// import SignUp from "./pages/User/signup";
+import UserForm from "./pages/User/UserForm";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home/index";
 import Dashboard from "./pages/dashboard/index";
@@ -19,8 +20,9 @@ class App extends Component {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/signup" component={SignUp} />
+          {/* <Route exact path="/signup" component={SignUp} /> */}
           <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/signup" component={UserForm} />
           <Route component={NoMatch} />
         </Switch>
         <Footer />
