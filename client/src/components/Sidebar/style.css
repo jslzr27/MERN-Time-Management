@@ -1,5 +1,11 @@
 
-
 #sidebar {
-    border: 1px solid green;
+}
+
+#dashboard-maincontent {
+}
+
+#main-sidebar {
+    background-color: white;
+    padding-top:4rem;
 }

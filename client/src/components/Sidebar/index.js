@@ -16,9 +16,11 @@ import Task from '../Task';
 import MyTask from '../Task/MyTask';
 import Stopwatch from '../TimeTracker/Stopwatch';
 import GoalPage from '../Goals';
+import CircularProgressBar from '../Schedule/ProgressBar';
 
 import "./style.css";
 import { Query } from 'mongoose';
+import { CircularProgress } from '@material-ui/core';
 
 
 const drawerWidth = 240;
@@ -101,16 +103,15 @@ class SideBar extends Component {
         return (
             <div className={classes.root} id="dashboard">
                 <CssBaseline />
-                <Drawer
+                {/* <Drawer
                     className={classes.drawer}
                     variant="permanent"
                     classes={{
                         paper: classes.drawerPaper,
                     }}
                     id="sidebar"
-                >
-                    <div className={classes.toolbar} />
-                    <List>
+                > */}
+                    <List id="main-sidebar">
                         <ListItem button onClick={this.toggleSchedule}>
                             <ListItemIcon><i className="far fa-calendar"></i></ListItemIcon>
                             <ListItemText >Schedule</ListItemText>
@@ -132,11 +133,10 @@ class SideBar extends Component {
                             <ListItemText >History</ListItemText>
                         </ListItem>
                     </List>
-                </Drawer>
-                <main className={classes.content}>
+                {/* </Drawer> */}
+                <main className={classes.content} id="dashboard-maincontent">
                     <div className={classes.toolbar} />
                     <h1>Hello, Jesus</h1>
-                    <Schedule />
                     {schedule}
                     {stopWatch}
                     {goals}
