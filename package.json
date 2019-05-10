@@ -4,6 +4,7 @@
   "description": "An app created to help people manage task and find time",
   "main": "server.js",
   "scripts": {
+    "client-install": "npm install --prefix client",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
@@ -13,6 +14,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jslzr27/MERN-Time-Management.git"
+  },
+  "engines": {
+    "node": "8.12.0",
+    "npm": "6.4.1"
   },
   "author": "Jesus Salazar, Tyler Zaworski",
   "license": "ISC",
