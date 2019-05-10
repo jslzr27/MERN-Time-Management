@@ -9,13 +9,18 @@ export default class Schedule extends Component {
 
   state = {
     totalHours: 0,
-    percentage: 10,
+    percentage: 20,
   }
 
-  // getTotalHours = totalHours => {
-  //   this.setState({totalHours: totalHours})
-  //   console.log(totalHours);
-  // }
+  getHours = e => {
+    this.setState({ totalHours: e.target.value })
+    console.log(e.target.value);
+  }
+
+  getTotalHours = totalHours => {
+    this.setState({totalHours: totalHours})
+    console.log(totalHours);
+  }
   getWholePercent = (percentFor, percentOf) => {
     return (percentFor / percentOf * 100);
 }
@@ -36,10 +41,9 @@ export default class Schedule extends Component {
   render() {
     return (
         <Grid container id="schedule-div">
-        
           <Grid item md>        
             <ScheduleList 
-            getHours = {this.getHours} />
+            handleHours = {this.getHours} />
           </Grid>
           <Grid item md id="questions">
             {/* <Bar percentage={this.state.percentage} />  */}
