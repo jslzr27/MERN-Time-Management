@@ -1,11 +1,27 @@
-#bar{
+#appbar, #ssss{
     width: 100%;   
+    justify-content: center;
+    align-items: center;
 }
 
-#login {
-    float: right;
-    position: relative;
-    margin-right: 0px;
-    border: 1px solid red;
+#bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home-btn {
+    justify-content: left;
+    position: absolute;
+    left: 25px;
+}
+
+#signup-login { 
+    position: absolute;
+    right: 25px;
+}
+
+#signup-login-btn { 
 }
 

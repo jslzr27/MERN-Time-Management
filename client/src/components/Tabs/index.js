@@ -5,22 +5,29 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import { Paper } from '@material-ui/core';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 const styles = theme => ({
   root: {
+    display: "flex",
     flexGrow: 1,
     backgroundColor: "inherit",
     border: 0,
     boxShadow: "none",
+    alignItems: "center",
+    justifyContent: "center",
   },
   tabsRoot: {
     borderBottom: '1px solid #000000',
+    textAlign: 'center',
+
   },
   tabsIndicator: {
     backgroundColor: '#8bea43',
   },
   tabRoot: {
     textTransform: 'initial',
+    textAlign: 'center',
     minWidth: 72,
     fontWeight: theme.typography.fontWeightRegular,
     marginRight: theme.spacing.unit * 4,
@@ -74,6 +81,7 @@ class MenuTabs extends React.Component {
           onChange={this.handleChange}
           classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
         >
+        <Router>
           <Tab
             disableRipple
             classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
@@ -90,8 +98,9 @@ class MenuTabs extends React.Component {
             disableRipple
             classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
             label="Dashboard"
-            href="dashboard"
+            href="/dashboard"
           />
+          </Router>
         </Tabs>
       </Paper>
     );

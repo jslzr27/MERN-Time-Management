@@ -1,6 +1,8 @@
 /* eslint-disable default-case */
 import React, { Component } from 'react'
 import SignUp from './signup';
+import Login from './Login';
+import Dashboard from '../dashboard/';
 
 export default class UserForm extends Component {
     state={
@@ -19,7 +21,7 @@ export default class UserForm extends Component {
             step: step + 1
         });
     }
-
+ 
     //Back to prev step
 
      prevStep = () =>{
@@ -30,12 +32,13 @@ export default class UserForm extends Component {
     }
 
     handleChange = input => e => {
-        this.setState({[input]: e.target.value})
+        this.setState({ [input]: e.target.value })
     }
-  render() {
-    const { step } = this.state;
-    const { firstName, lastName, email, password } = this.state;
-    const values = { firstName, lastName, email, password };
+
+    render() {
+        const { step } = this.state;
+        const { firstName, lastName, email, password } = this.state;
+        const values = { firstName, lastName, email, password };
    
     switch(step) {
         case 1:
@@ -47,7 +50,19 @@ export default class UserForm extends Component {
                 />
             )
         case 2:
-            return <h1>Success</h1>
+            return (
+                <Login 
+                    nextStep={this.nextStep}
+                    prevStep={this.prevStep}
+                    handleChange={this.handleChange}
+                    values={values}
+                />
+
+            )
+        case 3:
+            return (
+                <Dashboard />
+            )
     }
   }
 }

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { withStyles, AppBar, Toolbar, Typography, Button, FormHelperText } from '@material-ui/core';
+import { withStyles, AppBar, Toolbar, Typography, Button, FormHelperText, Grid } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import "./style.css";
 
@@ -13,6 +13,7 @@ const styles = {
       color: 'white',
       alignItems: "center",
       justifyContent: "center",
+      zIndex: 99,
     },
   };  
 
@@ -21,14 +22,22 @@ let Navbar = (props) => {
     const { classes } = props;
     return(
         <Fragment>
-            <AppBar className={classes.root} position="static">
+          <Grid container>
+            <AppBar className={classes.root} position="static" id="appbar">
                 <Toolbar id="bar">
-                    <Button color="inherit" href="/" id="logo">
-                    Time Management App
-                    </Button>
-                    <Button id="login" color="inherit" href="/signup">Login / Register</Button>
+                  <Grid container id="ssss">
+                    <Grid item id="home-btn">
+                      <Button color="inherit" href="/" id="logo">
+                      Time Management App
+                      </Button>
+                    </Grid>
+                    <Grid id="signup-login">
+                      <Button id="signup-login-btn" color="inherit" href="/signup">Login / Register</Button>
+                    </Grid>
+                  </Grid>
                 </Toolbar>
             </AppBar>
+          </Grid>
         </Fragment>
         //Get auth
         //     <Fragment>

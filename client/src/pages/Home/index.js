@@ -11,12 +11,12 @@ export default class Home extends Component {
     return (
       <div>
       <div className="section">
-          <section className="parallax" id="p1">
-            <div>
-            <h1>Manage your time with us</h1>
-          <h3>Find Time to Learn, Play or Enjoy</h3>
-          <Button variant="contained" color="primary" href="/signup ">Register for Free</Button>
-          <h4>Already have an account. <span className="login"><a href="/signup">Log in</a></span></h4>
+        <section className="parallax" id="p1">
+            <div id="main-text">
+            <p>Manage your time with us</p>
+            <p>Find Time to Learn, Play or Enjoy</p>
+            <Button variant="contained" color="primary" href="/signup" id="button"><p>Register for Free</p></Button>
+            <p>Already have an account. <span className="login"><a href="/signup">Log in</a></span></p>
             </div>
         </section>
       </div>
@@ -24,21 +24,22 @@ export default class Home extends Component {
         <p><i class="far fa-calendar-alt"></i> Schedule your time</p>
         <p><i class="fas fa-edit"></i> Add a new task you want to improve</p>
         <p><i class="fas fa-stopwatch"></i> Track your activities</p>
-        <Button variant="contained" color="primary" href="/signup">Sign Up Now</Button>
+        <Button variant="contained" color="primary" href="/signup" id="button">Sign Up Now</Button>
       </div>
       <div className="section">
         <section className="parallax" id="p2">
-          <div>
-          <h1>Manage your time with us</h1>
-        <h3>Find Time to Learn, Play or Enjoy</h3>
-        <Button variant="contained" color="primary" href="signup">Register for Free</Button>
-        <h4>Already have an account. <span className="login"><a href="/signup">Log in</a></span></h4>
+          <div id="main-text">
+          <p>Manage your time with us</p>
+        <p>Find Time to Learn, Play or Enjoy</p>
+        <Button variant="contained" color="primary" href="signup" id="button">Register for Free</Button>
+        <p>Already have an account. <span className="login"><a href="/signup">Log in</a></span></p>
           </div>
       </section>
       </div>
       <div className="section" id="s2">
+        <i class="fas fa-clock"></i>
         <p>Start managing your time with us</p>
-        <Button variant="contained" color="primary" href="/signup">Sign Up Now</Button>
+        <Button variant="contained" color="primary" href="/signup" id="button">Sign Up Now</Button>
       </div>
     </div>
     ) 

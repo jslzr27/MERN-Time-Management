@@ -29,11 +29,16 @@ const styles = theme => ({
     },
 });
 
-class Signup extends Component {
+class Login extends Component {
     continue = e => {
         e.preventDefault();
         this.props.nextStep();
-    }
+    };
+
+    back = e => {
+        e.preventDefault();
+        this.props.prevStep();
+    };
 
     render(){
         const { values, handleChange } = this.props;
@@ -42,32 +47,8 @@ class Signup extends Component {
         // expression.test(String('my-email@test.com').toLowerCase());
         return (
             <Grid container id="user-form" className={classes.root}>
-                <h1>Sign Up</h1>
+                <h1>Log In</h1>
                 <FormControl>
-                    <TextField
-                        name="first-name"
-                        id="standard-with-placeholder first"
-                        label="Your First Name"
-                        placeholder="First Name"
-                        margin="normal"
-                        classes={{
-                            root: classes.cssLabel,
-                            focused: classes.cssFocused
-                        }}
-                        onChange={handleChange("firstName")}
-                    />
-                     <TextField
-                        name="last-name"
-                        id="standard-with-placeholder last"
-                        label="Your Last Name"
-                        placeholder="Last Name"
-                        margin="normal"
-                        classes={{
-                            root: classes.cssLabel,
-                            focused: classes.cssFocused
-                        }}
-                        onChange={handleChange("lastName")}
-                   />
                     <TextField 
                         name="email"
                         id="standard-with-placeholder email"
@@ -94,17 +75,17 @@ class Signup extends Component {
                         onChange={handleChange("password")}
                    />
                     <Button onClick={this.continue} id="button">
-                        Finish Signing Up
+                        Login
                     </Button>
                 </FormControl>
-                <Typography>Already registered. <span id="retake-form" onClick={this.continue}>Log In</span></Typography>
+                <Typography>Not registered yet. <span id="retake-form" onClick={this.back}>Sign Up</span></Typography>
             </Grid>
         )
     }
 }
 
-Signup.propTypes = {
+Login.propTypes = {
     classes: PropTypes.object.isRequired,
   };
 
-export default withStyles(styles)(Signup);
+export default withStyles(styles)(Login);

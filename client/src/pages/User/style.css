@@ -7,10 +7,16 @@
 }
 
 #button {
-    border: 1px solid red;
     padding: 0.5rem;
     color: beige;
     background-color: #8eba43;
     margin-top: 1rem;
     margin-bottom: 2rem;
 }
+
+#retake-form {
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
