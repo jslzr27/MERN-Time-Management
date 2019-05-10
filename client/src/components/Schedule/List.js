@@ -38,7 +38,7 @@ class ListItemTask extends Component {
                 }}
                 margin="normal"
                 variant="outlined"
-                // onChange={this.getHours}
+                onChange={this.handleHours}
                 />
         </ListItem>
         )
@@ -85,7 +85,7 @@ class ScheduleList extends Component {
                         id={post.id}
                         primary={post.primary}
                         delete={this.deleteTask.bind(this, index)}
-                        onChange={this.getHours}
+                        // onChange={this.props.getHours}
                     />
                 )
             } )}      
