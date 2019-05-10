@@ -12,12 +12,13 @@ app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("./client/build"));
-  }
+  
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
+}
 app.get('/express_backend', (req, res) => {
     res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
   });
@@ -31,6 +32,7 @@ db.once('open', () => console.log("connected to MongoDB")) ;
 //Check for db errors
 db.on('error', err => console.log(err));
 
+//serve static assets
 app.listen(PORT, () => {
     console.log(`🌎 ==> API server now on port ${PORT}!`)
 });
