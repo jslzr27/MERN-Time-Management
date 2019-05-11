@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Button } from '@material-ui/core';
+import { Button, Grid } from '@material-ui/core';
 import LogActivity from '../Logger';
 import "./style.css";
 
@@ -48,7 +48,7 @@ handleLogClick = () => {
   render() {
     return (
     <div>
-      <Fragment className="stopwatch">
+      <Grid container className="stopwatch">
           <h1 className="stopwatch-timer">{this.getHours()}:{this.getMinutes()}:{this.getSeconds()}</h1>
 
           {(this.state.secondsElapsed === 0 || this.incrementer === this.state.lastClearedIncrementer) 
@@ -63,7 +63,7 @@ handleLogClick = () => {
           <br></br>    
           {/* <Button onClick={this.handleLogClick}>Log your Time</Button> */}
           <LogActivity /> 
-      </Fragment>
+      </Grid>
       </div>
     )
   }
