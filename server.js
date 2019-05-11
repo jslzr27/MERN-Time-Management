@@ -10,6 +10,8 @@ app.use(favicon(__dirname + './client/build/images/watch.png'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use("api/users", require("./routes/api/users"))
+
 if (process.env.NODE_ENV === "production") {
   
   app.use(express.static("./client/build"));
