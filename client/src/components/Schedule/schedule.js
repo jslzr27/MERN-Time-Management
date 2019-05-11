@@ -9,7 +9,7 @@ export default class Schedule extends Component {
 
   state = {
     totalHours: 0,
-    percentage: 20,
+    percentage: 0,
   }
 
   getHours = e => {

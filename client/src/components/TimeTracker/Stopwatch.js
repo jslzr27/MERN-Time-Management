@@ -8,7 +8,7 @@ import "./style.css";
 export default class Stopwatch extends Component {
 constructor(props) {
     super(props);
-    this.state = { secondsElapsed: 3590 };
+    this.state = { secondsElapsed: 0 };
     }
     
 getSeconds = () => {
