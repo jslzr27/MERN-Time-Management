@@ -9,41 +9,48 @@ export default class Schedule extends Component {
 
   state = {
     totalHours: 0,
-    percentage: 20,
+    percentage: 0,
   }
 
-  getHours = e => {
-    this.setState({ totalHours: e.target.value })
-    console.log(e.target.value);
-  }
+  // getHours = e => {
+  //   function getPercent(percentFor, percentOf) {
+  //     return (percentFor / percentOf * 100);
+  //   }
+  //   this.setState({ 
+  //     totalHours: e.target.value,
+  //     percentage: getPercent(this.state.totalHours, 24)
+  //   })
+  //   console.log(e.target.value);
+  // }
 
-  getTotalHours = totalHours => {
-    this.setState({totalHours: totalHours})
-    console.log(totalHours);
-  }
-  getWholePercent = (percentFor, percentOf) => {
-    return (percentFor / percentOf * 100);
-}
+//   getTotalHours = totalHours => {
+//     this.setState({totalHours: totalHours})
+//     console.log(totalHours);
+//   }
+//   getPercent = (percentFor, percentOf) => {
+//     return (percentFor / percentOf * 100);
+// }
 
-  getPercentage = () => {
-    let changePercentage = this.state.percentage;
-    changePercentage = 25;
-    this.setState(
-      { percentage: changePercentage },
-    );
-  }
+  // getPercentage = () => {
+  //   let changePercentage = this.state.percentage;
+  //   changePercentage = 25;
+  //   this.setState(
+  //     { percentage: changePercentage },
+  //   );
+  // }
   
-  getHours = e => {
-    this.setState({totalHours: e.target.value});
-    console.log(e.target.value);
-  }
+  // getHours = e => {
+  //   this.setState({totalHours: e.target.value});
+  //   console.log(e.target.value);
+  // }
 
   render() {
     return (
         <Grid container id="schedule-div">
           <Grid item md>        
             <ScheduleList 
-            handleHours = {this.getHours} />
+            getHours = {this.getTotalHours} 
+            />
           </Grid>
           <Grid item md id="questions">
             {/* <Bar percentage={this.state.percentage} />  */}
