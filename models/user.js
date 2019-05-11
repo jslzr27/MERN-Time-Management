@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
+const Activity = require("../models/active");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     firstName: {type: String, required: true},
     lastName: {type: String, required: true},
-    Email: {type: String, required: true},
+    Email: {type: String, required: true, unique: true},
     password: {type: String, required: true},
     Activities: {type: String, ref: 'Activity', required: true}
 });
