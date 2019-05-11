@@ -136,7 +136,7 @@ class SideBar extends Component {
                 {/* </Drawer> */}
                 <main className={classes.content} id="dashboard-maincontent">
                     <div className={classes.toolbar} />
-                    <h1>Hello, </h1>
+                    <h1>Hello, Welcome to your dashboard</h1>
                     {schedule}
                     {stopWatch}
                     {goals}

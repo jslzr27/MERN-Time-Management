@@ -48,6 +48,7 @@ class ListItemTask extends Component {
 
 class ScheduleList extends Component {
     state = {
+        value: "",
         postItems: [
             {id: 1, primary: "Working"},
             {id: 2, primary: "Traveling"},
@@ -85,6 +86,7 @@ class ScheduleList extends Component {
                         id={post.id}
                         primary={post.primary}
                         delete={this.deleteTask.bind(this, index)}
+                        // onChange={this.getHours.bind(this)}
                         // onChange={this.props.getHours}
                     />
                 )
